@@ -1,0 +1,13 @@
+[Unit]
+Description=System Monitor and Intrusion Detection Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/python3 /opt/system-monitor/monitor_service.py --daemon
+Restart=always
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
